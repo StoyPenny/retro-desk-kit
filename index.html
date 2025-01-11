@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Retro Desk Kit</title>
   <link rel="stylesheet" href="style.css">
+  <script type="module" src="src/main.js"></script>
 </head>
 
 <body>
@@ -107,11 +108,12 @@
         </div>
         <div class="timer-display" id="timer-display">25:00</div>
         <div class="timer-mode" id="timer-mode">Work</div>
-        <div class="timer-controls">
-          <button id="start-timer">Start</button>
-          <button id="pause-timer">Pause</button>
-          <button id="reset-timer">Reset</button>
-        </div>
+        <fieldset class="timer-controls">
+          <legend>Timer Controls</legend>
+          <button id="start-timer" aria-label="Start Timer">Start</button>
+          <button id="pause-timer" aria-label="Pause Timer">Pause</button>
+          <button id="reset-timer" aria-label="Reset Timer">Reset</button>
+        </fieldset>
       </div>
       <div class="session-tally" id="session-tally"></div>
       <div class="bell-icon" id="bell-icon">🔔</div>

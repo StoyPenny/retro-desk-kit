@@ -1,3 +1,32 @@
+:root {
+  --primary-color: #ddd;
+  --border-color: #999;
+  --shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  --border-radius: 5px;
+  --spacing-unit: 10px;
+
+  --font-size-xs: 0.9em;
+  --font-size-sm: 1em
+  --font-size-md: 1.2em;
+  --font-size-lg: 1.5em
+  --font-size-xl: 2em
+
+  /* --grid-gap-sm: 10px;
+  --grid-gap-md: 20px;
+  --grid-gap-lg: 30px;
+  --container-width: 1200px; */
+
+  /* --transition-fast: 150ms ease-in-out;
+  --transition-medium: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out; */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -20,24 +49,26 @@ body {
 }
 
 .calculator {
-  background-color: #ddd;
-  border: 4px solid #999;
+  background-color: var(--primary-color);
+  border: 4px solid var(--border-color);
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .display {
-  margin-bottom: 10px;
+  margin-bottom: var(--spacing-unit);
 }
 
 .display input {
   width: 100%;
-  padding: 10px;
-  font-size: 2em;
+  padding: var(--spacing-unit);
+  font-size: var(--font-size-xl);
   text-align: right;
-  border: 2px solid #999;
-  border-radius: 5px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
   background-color: #fff;
   color: #333;
   font-family: monospace;
@@ -51,9 +82,9 @@ body {
 
 .buttons button {
   padding: 15px;
-  font-size: 1.5em;
-  border: 2px solid #999;
-  border-radius: 5px;
+  font-size: var(--font-size-lg);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
   background-color: #eee;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -71,11 +102,11 @@ body {
 }
 
 #add-note-button {
-  margin-bottom: 10px;
-  padding: 10px 15px;
-  font-size: 1em;
-  border: 2px solid #999;
-  border-radius: 5px;
+  margin-bottom: var(--spacing-unit);
+  padding: var(--spacing-unit) 15px;
+  font-size: var(--font-size-sm);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
   background-color: #eee;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -89,9 +120,9 @@ body {
 .note {
   background-color: #ffffcc;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-unit);
+  margin-bottom: var(--spacing-unit);
   width: 200px;
   position: relative;
 }
@@ -103,7 +134,7 @@ body {
   resize: none;
   background-color: transparent;
   font-family: monospace;
-  font-size: 1em;
+  font-size: var(--font-size-sm);
 }
 
 .note input[type="text"] {
@@ -111,7 +142,7 @@ body {
   border: none;
   background-color: transparent;
   font-family: monospace;
-  font-size: 0.9em;
+  font-size: var(--font-size-xs);
   margin-top: 5px;
 }
 
@@ -122,7 +153,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: var(--font-size-md);
 }
 
 .clocks-container {
@@ -132,26 +163,26 @@ body {
 }
 
 .clock {
-  background-color: #ddd;
-  border: 4px solid #999;
+  background-color: var(--primary-color);
+  border: 4px solid var(--border-color);
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow);
 }
 
 .clock-title {
-  margin-bottom: 10px;
-  font-size: 1.2em;
+  margin-bottom: var(--spacing-unit);
+  font-size: var(--font-size-md);
 }
 
 .clock-title select {
-  font-size: 1em;
+  font-size: var(--font-size-sm);
   font-family: monospace;
 }
 
 .clock-time {
-  font-size: 1.5em;
+  font-size: var(--font-size-lg);
 }
 
 .todo-container {
@@ -163,19 +194,19 @@ body {
 .todo-pad {
   background-color: #fff;
   border: 2px solid #ccc;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   padding: 20px;
   width: 300px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(to bottom, transparent 19px, #ddd 20px),
-    linear-gradient(to right, #ddd 1px, transparent 1px);
+  box-shadow: var(--shadow);
+  background-image: linear-gradient(to bottom, transparent 19px, var(--primary-color) 20px),
+    linear-gradient(to right, var(--primary-color) 1px, transparent 1px);
   background-size: 100% 20px, 20px 100%;
 }
 
 .todo-title {
   text-align: center;
-  margin-bottom: 10px;
-  font-size: 1.5em;
+  margin-bottom: var(--spacing-unit);
+  font-size: var(--font-size-lg);
 }
 
 #todo-list {
@@ -185,7 +216,7 @@ body {
 
 #todo-list li {
   padding: 5px 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--primary-color);
   display: flex;
   align-items: center;
 }
@@ -195,7 +226,7 @@ body {
 }
 
 #todo-list li input[type="checkbox"] {
-  margin-right: 10px;
+  margin-right: var(--spacing-unit);
 }
 
 #todo-list li label.completed {
@@ -206,16 +237,16 @@ body {
 #new-todo {
   width: 100%;
   padding: 8px;
-  margin-top: 10px;
+  margin-top: var(--spacing-unit);
   border: 1px solid #ccc;
   border-radius: 3px;
   font-family: monospace;
 }
 
 #add-todo-button {
-  margin-top: 10px;
+  margin-top: var(--spacing-unit);
   padding: 8px 12px;
-  border: 1px solid #999;
+  border: 1px solid var(--border-color);
   border-radius: 3px;
   background-color: #eee;
   cursor: pointer;
@@ -236,36 +267,36 @@ body {
 
 .pomodoro-settings {
   display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: var(--spacing-unit);
+  margin-bottom: var(--spacing-unit);
 }
 
 .pomodoro-settings label {
-  font-size: 1em;
+  font-size: var(--font-size-sm);
 }
 
 .pomodoro-settings input {
   width: 50px;
   padding: 5px;
-  font-size: 1em;
-  border: 1px solid #999;
-  border-radius: 5px;
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   font-family: monospace;
 }
 
 .pomodoro-timer {
-  background-color: #ddd;
-  border: 4px solid #999;
+  background-color: var(--primary-color);
+  border: 4px solid var(--border-color);
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow);
   position: relative;
 }
 
 .metronome {
   position: absolute;
-  top: 10px;
+  top: var(--spacing-unit);
   left: 50%;
   transform: translateX(-50%);
   width: 40px;
@@ -299,13 +330,13 @@ body {
 }
 
 .timer-display {
-  font-size: 2em;
+  font-size: var(--font-size-xl);
   margin-bottom: 5px;
 }
 
 .timer-mode {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-unit);
 }
 
 .timer-mode.break {
@@ -314,9 +345,9 @@ body {
 
 .timer-controls button {
   padding: 8px 12px;
-  font-size: 1em;
-  border: 2px solid #999;
-  border-radius: 5px;
+  font-size: var(--font-size-sm);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
   background-color: #eee;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -330,43 +361,58 @@ body {
 
 .bell-icon {
   font-size: 3em;
-  margin-top: 10px;
+  margin-top: var(--spacing-unit);
   cursor: pointer;
   display: none;
 }
 
 .session-tally {
-  margin-top: 10px;
-  font-size: 1.2em;
+  margin-top: var(--spacing-unit);
+  font-size: var(--font-size-md);
 }
 
 .timezone-converter {
   margin-top: 20px;
-  background-color: #ddd;
-  border: 4px solid #999;
+  background-color: var(--primary-color);
+  border: 4px solid var(--border-color);
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow);
 }
 
 .converter-inputs {
   display: flex;
-  gap: 10px;
+  gap: var(--spacing-unit);
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: var(--spacing-unit);
 }
 
 .converter-inputs label {
-  font-size: 1em;
+  font-size: var(--font-size-sm);
 }
 
 .converter-inputs select {
-  font-size: 1em;
+  font-size: var(--font-size-sm);
   font-family: monospace;
 }
 
 .converted-time {
-  font-size: 1.5em;
+  font-size: var(--font-size-lg);
+}
+
+.calculator, .clock, .pomodoro-timer {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }
