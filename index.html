@@ -1,145 +1,148 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Retro Calculator</title>
-      <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-      <div class="app-container">
-        <div class="calculator-container">
-          <div class="calculator">
-            <div class="display">
-              <input type="text" id="result" value="0" disabled>
-            </div>
-            <div class="buttons">
-              <button onclick="clearDisplay()">C</button>
-              <button onclick="appendValue('/')">/</button>
-              <button onclick="appendValue('*')">*</button>
-              <button onclick="backspace()">&#9003;</button>
-              <button onclick="appendValue('7')">7</button>
-              <button onclick="appendValue('8')">8</button>
-              <button onclick="appendValue('9')">9</button>
-              <button onclick="appendValue('-')">-</button>
-              <button onclick="appendValue('4')">4</button>
-              <button onclick="appendValue('5')">5</button>
-              <button onclick="appendValue('6')">6</button>
-              <button onclick="appendValue('+')">+</button>
-              <button onclick="appendValue('1')">1</button>
-              <button onclick="appendValue('2')">2</button>
-              <button onclick="appendValue('3')">3</button>
-              <button onclick="appendValue('0')">0</button>
-              <button onclick="appendValue('.')">.</button>
-              <button onclick="calculate()">=</button>
-            </div>
-          </div>
-          <div class="notes-container">
-            <button id="add-note-button">Add Note</button>
-            <div id="notes"></div>
-          </div>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Desk Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <div class="calculator-container">
+      <div class="calculator">
+        <div class="display">
+          <input type="text" id="result" value="0" disabled>
         </div>
-        <div class="clocks-container">
-          <div class="clock">
-            <h3 class="clock-title">Local Time</h3>
-            <div class="clock-time" id="local-clock"></div>
-          </div>
-          <div class="clock">
-            <h3 class="clock-title">
-              <select id="timezone-1">
-                <option value="America/New_York">New York</option>
-                <option value="Europe/London">London</option>
-                <option value="Asia/Tokyo">Tokyo</option>
-                <option value="America/Los_Angeles">Los Angeles</option>
-                <option value="Europe/Paris">Paris</option>
-                <option value="Asia/Shanghai">Shanghai</option>
-              </select>
-            </h3>
-            <div class="clock-time" id="clock-1"></div>
-          </div>
-          <div class="clock">
-            <h3 class="clock-title">
-              <select id="timezone-2">
-                <option value="America/New_York">New York</option>
-                <option value="Europe/London">London</option>
-                <option value="Asia/Tokyo">Tokyo</option>
-                <option value="America/Los_Angeles">Los Angeles</option>
-                <option value="Europe/Paris">Paris</option>
-                <option value="Asia/Shanghai">Shanghai</option>
-              </select>
-            </h3>
-            <div class="clock-time" id="clock-2"></div>
-          </div>
-          <div class="clock">
-            <h3 class="clock-title">
-              <select id="timezone-3">
-                <option value="America/New_York">New York</option>
-                <option value="Europe/London">London</option>
-                <option value="Asia/Tokyo">Tokyo</option>
-                <option value="America/Los_Angeles">Los Angeles</option>
-                <option value="Europe/Paris">Paris</option>
-                <option value="Asia/Shanghai">Shanghai</option>
-              </select>
-            </h3>
-            <div class="clock-time" id="clock-3"></div>
-          </div>
-        </div>
-        <div class="todo-container">
-          <div class="todo-pad">
-            <h2 class="todo-title">To-Do List</h2>
-            <ul id="todo-list"></ul>
-            <input type="text" id="new-todo" placeholder="Add a new item">
-            <button id="add-todo-button">Add</button>
-          </div>
-        </div>
-        <div class="pomodoro-container">
-          <div class="pomodoro-settings">
-            <label for="work-duration">Work:</label>
-            <input type="number" id="work-duration" value="25" min="1">
-            <label for="break-duration">Break:</label>
-            <input type="number" id="break-duration" value="5" min="1">
-          </div>
-          <div class="pomodoro-timer">
-            <div class="metronome">
-              <div class="metronome-arm" id="metronome-arm"></div>
-            </div>
-            <div class="timer-display" id="timer-display">25:00</div>
-            <div class="timer-mode" id="timer-mode">Work</div>
-            <div class="timer-controls">
-              <button id="start-timer">Start</button>
-              <button id="pause-timer">Pause</button>
-              <button id="reset-timer">Reset</button>
-            </div>
-          </div>
-          <div class="session-tally" id="session-tally"></div>
-          <div class="bell-icon" id="bell-icon">🔔</div>
-        </div>
-        <div class="timezone-converter">
-          <h2>Time Zone Converter</h2>
-          <div class="converter-inputs">
-            <label for="from-timezone">From:</label>
-            <select id="from-timezone">
-              <option value="">Local Time</option>
-              <option value="America/New_York">New York</option>
-              <option value="Europe/London">London</option>
-              <option value="Asia/Tokyo">Tokyo</option>
-              <option value="America/Los_Angeles">Los Angeles</option>
-              <option value="Europe/Paris">Paris</option>
-              <option value="Asia/Shanghai">Shanghai</option>
-            </select>
-            <label for="to-timezone">To:</label>
-            <select id="to-timezone">
-              <option value="America/New_York">New York</option>
-              <option value="Europe/London">London</option>
-              <option value="Asia/Tokyo">Tokyo</option>
-              <option value="America/Los_Angeles">Los Angeles</option>
-              <option value="Europe/Paris">Paris</option>
-              <option value="Asia/Shanghai">Shanghai</option>
-            </select>
-          </div>
-          <div class="converted-time" id="converted-time"></div>
+        <div class="buttons">
+          <button onclick="clearDisplay()">C</button>
+          <button onclick="appendValue('/')">/</button>
+          <button onclick="appendValue('*')">*</button>
+          <button onclick="backspace()">&#9003;</button>
+          <button onclick="appendValue('7')">7</button>
+          <button onclick="appendValue('8')">8</button>
+          <button onclick="appendValue('9')">9</button>
+          <button onclick="appendValue('-')">-</button>
+          <button onclick="appendValue('4')">4</button>
+          <button onclick="appendValue('5')">5</button>
+          <button onclick="appendValue('6')">6</button>
+          <button onclick="appendValue('+')">+</button>
+          <button onclick="appendValue('1')">1</button>
+          <button onclick="appendValue('2')">2</button>
+          <button onclick="appendValue('3')">3</button>
+          <button onclick="appendValue('0')">0</button>
+          <button onclick="appendValue('.')">.</button>
+          <button onclick="calculate()">=</button>
         </div>
       </div>
-      <script src="script.js"></script>
-    </body>
-    </html>
+      <div class="notes-container">
+        <button id="add-note-button">Add Note</button>
+        <div id="notes"></div>
+      </div>
+    </div>
+    <div class="clocks-container">
+      <div class="clock">
+        <h3 class="clock-title">Local Time</h3>
+        <div class="clock-time" id="local-clock"></div>
+      </div>
+      <div class="clock">
+        <h3 class="clock-title">
+          <select id="timezone-1">
+            <option value="America/New_York">New York</option>
+            <option value="Europe/London">London</option>
+            <option value="Asia/Tokyo">Tokyo</option>
+            <option value="America/Los_Angeles">Los Angeles</option>
+            <option value="Europe/Paris">Paris</option>
+            <option value="Asia/Shanghai">Shanghai</option>
+          </select>
+        </h3>
+        <div class="clock-time" id="clock-1"></div>
+      </div>
+      <div class="clock">
+        <h3 class="clock-title">
+          <select id="timezone-2">
+            <option value="America/New_York">New York</option>
+            <option value="Europe/London">London</option>
+            <option value="Asia/Tokyo">Tokyo</option>
+            <option value="America/Los_Angeles">Los Angeles</option>
+            <option value="Europe/Paris">Paris</option>
+            <option value="Asia/Shanghai">Shanghai</option>
+          </select>
+        </h3>
+        <div class="clock-time" id="clock-2"></div>
+      </div>
+      <div class="clock">
+        <h3 class="clock-title">
+          <select id="timezone-3">
+            <option value="America/New_York">New York</option>
+            <option value="Europe/London">London</option>
+            <option value="Asia/Tokyo">Tokyo</option>
+            <option value="America/Los_Angeles">Los Angeles</option>
+            <option value="Europe/Paris">Paris</option>
+            <option value="Asia/Shanghai">Shanghai</option>
+          </select>
+        </h3>
+        <div class="clock-time" id="clock-3"></div>
+      </div>
+    </div>
+    <div class="todo-container">
+      <div class="todo-pad">
+        <h2 class="todo-title">To-Do List</h2>
+        <ul id="todo-list"></ul>
+        <input type="text" id="new-todo" placeholder="Add a new item">
+        <button id="add-todo-button">Add</button>
+      </div>
+    </div>
+    <div class="pomodoro-container">
+      <div class="pomodoro-settings">
+        <label for="work-duration">Work:</label>
+        <input type="number" id="work-duration" value="25" min="1">
+        <label for="break-duration">Break:</label>
+        <input type="number" id="break-duration" value="5" min="1">
+      </div>
+      <div class="pomodoro-timer">
+        <div class="metronome">
+          <div class="metronome-arm" id="metronome-arm"></div>
+        </div>
+        <div class="timer-display" id="timer-display">25:00</div>
+        <div class="timer-mode" id="timer-mode">Work</div>
+        <div class="timer-controls">
+          <button id="start-timer">Start</button>
+          <button id="pause-timer">Pause</button>
+          <button id="reset-timer">Reset</button>
+        </div>
+      </div>
+      <div class="session-tally" id="session-tally"></div>
+      <div class="bell-icon" id="bell-icon">🔔</div>
+    </div>
+    <div class="timezone-converter">
+      <h2>Time Zone Converter</h2>
+      <div class="converter-inputs">
+        <label for="from-timezone">From:</label>
+        <select id="from-timezone">
+          <option value="">Local Time</option>
+          <option value="America/New_York">New York</option>
+          <option value="Europe/London">London</option>
+          <option value="Asia/Tokyo">Tokyo</option>
+          <option value="America/Los_Angeles">Los Angeles</option>
+          <option value="Europe/Paris">Paris</option>
+          <option value="Asia/Shanghai">Shanghai</option>
+        </select>
+        <label for="to-timezone">To:</label>
+        <select id="to-timezone">
+          <option value="America/New_York">New York</option>
+          <option value="Europe/London">London</option>
+          <option value="Asia/Tokyo">Tokyo</option>
+          <option value="America/Los_Angeles">Los Angeles</option>
+          <option value="Europe/Paris">Paris</option>
+          <option value="Asia/Shanghai">Shanghai</option>
+        </select>
+      </div>
+      <div class="converted-time" id="converted-time"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
