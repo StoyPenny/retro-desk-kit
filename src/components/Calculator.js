@@ -1,4 +1,4 @@
-import { safeEval } from '../utils/errorHandling.js';
+import { safeEval } from '../../utils/errorHandling.js';
 
 export class Calculator {
   constructor() {
