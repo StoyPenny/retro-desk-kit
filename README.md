@@ -1,5 +1,7 @@
 # Retro Desk Kit
 
+![localhost_5173_ (6)](https://github.com/user-attachments/assets/f497a36f-5bd0-46d9-a39c-e1a590c6f47a)
+
 A nostalgic productivity suite featuring a calculator, sticky notes, world clocks, todo list, and Pomodoro timer - all designed with a retro aesthetic.
 
 ## Overview
